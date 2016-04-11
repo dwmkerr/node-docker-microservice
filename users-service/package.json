@@ -1,0 +1,40 @@
+{
+  "name": "users-service",
+  "version": "1.0.0",
+  "description": "Basic service for retrieving user information from the directory.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dwmkerr/node-docker-microservice.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha -R spec **/*.spec.js",
+    "debug": "node-debug index.js",
+    "lint": "eslint ."
+  },
+  "author": "Dave Kerr, dwmkerr@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "morgan": "^1.7.0",
+    "mysql": "^2.10.2"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "jasmine": "^2.4.1",
+    "mocha": "^2.4.5",
+    "node-inspector": "^0.12.7",
+    "should": "^8.3.0",
+    "supertest": "^1.2.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "rules": {
+      "semi": 2
+    }
+  }
+}

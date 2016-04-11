@@ -16,3 +16,14 @@ To start or stop the test database, just use the commands below:
 ./test-database/start.sh  # starts the test database
 ./test-database/stop.sh   # stops the test database
 ```
+
+Some commands for working with the test server:
+
+```bash
+cd ./users-service
+npm install         # setup everything
+npm test 			# unit test - no need for a test database running
+npm start           # run the server - you must have a test database running
+npm run debug       # run the server in debug mode, opens a browser with the inspector
+npm run lint        # check to see if the code is beautiful
+```
