@@ -15,4 +15,4 @@ docker exec db mysqladmin --silent --wait=30 -uusers_service -p123 ping || exit 
 
 # Run the setup script.
 echo "Setting up initial data..."
-docker exec db mysql -uusers_service -p123 users < setup.sql
+docker exec -i db mysql -uusers_service -p123 users < setup.sql
