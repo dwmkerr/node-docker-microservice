@@ -1,7 +1,7 @@
 //  repository.js
 //
 //  Exposes a single function - 'connect', which returns
-//  a connected repository. Call 'disconnect' when you're done.
+//  a connected repository. Call 'disconnect' on this object when you're done.
 'use strict';
 
 var mysql = require('mysql');
@@ -63,8 +63,8 @@ class Repository {
 }
 
 //  One and only exported function, returns a connected repo.
-module.exports.connect = function(connectionSettings) {
-  return new Promise(function (resolve, reject) {
+module.exports.connect = (connectionSettings) => {
+  return new Promise((resolve, reject) => {
     if(!connectionSettings.host) throw new Error("A host must be specified.");
     if(!connectionSettings.user) throw new Error("A user must be specified.");
     if(!connectionSettings.password) throw new Error("A password must be specified.");
