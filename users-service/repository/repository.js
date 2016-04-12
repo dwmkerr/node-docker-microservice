@@ -18,7 +18,7 @@ class Repository {
 
       this.connection.query('SELECT email, phone_number FROM directory', (err, results) => {
         if(err) {
-          throw new Error("An error occured getting the users:" + err, err);
+          return reject(new Error('An error occured getting the users: ' + err));
         }
 
         resolve((results || []).map((user) => {
@@ -40,7 +40,7 @@ class Repository {
       this.connection.query('SELECT email, phone_number FROM directory WHERE email = ?', [email], (err, results) => {
 
         if(err) {
-          throw new Error("An error occured getting the user: " + err, err);
+          return reject(new Error('An error occured getting the user: ' + err));
         }
 
         if(results.length === 0) {

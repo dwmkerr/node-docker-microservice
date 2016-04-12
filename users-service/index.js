@@ -12,10 +12,10 @@ console.log("Connecting to customer repository...");
 
 //  Log unhandled exceptions.
 process.on('uncaughtException', function(err) {
-  console.error(err);
+  console.error('Unhandled Exception', err);
 });
 process.on('unhandledRejection', function(err, promise){
-  console.error(err);
+  console.error('Unhandled Rejection', err);
 });
 
 repository.connect({
