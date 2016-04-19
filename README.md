@@ -10,11 +10,12 @@ You must have Docker installed for this code to work! Check the [Installation Gu
 
 # Coding
 
-To start or stop the test database, just use the commands below:
+To start or stop the test database, build the test-database image and run it:
 
 ```bash
-./test-database/start.sh  # starts the test database
-./test-database/stop.sh   # stops the test database
+cd ./test-database
+docker build -t test-database .
+docker run -it -p 3306:3306 test-database
 ```
 
 Some commands for working with the test server:
@@ -33,4 +34,16 @@ You can also run the test server in its own container:
 ```bash
 docker build -t users-service .
 docker run -it -p 8123:8123 --link db:db -e DATABASE_HOST=DB users-service
+```
+
+# Integration Testing
+
+To test the entire stack, run:
+
+```bash
+docker-compose build
+docker-compose -d up
+sleep 10 # give the database server enough time to start!
+cd integration-test && npm start && cd ..
+docker-compose -d down
 ```

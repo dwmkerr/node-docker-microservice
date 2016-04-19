@@ -1,0 +1,12 @@
+version: '2'
+services:
+  users-service:
+    build: ./users-service
+    ports:
+     - "8123:8123"
+    depends_on:
+     - db
+    environment:
+     - DATABASE_HOST=db
+  db:
+    build: ./test-database

@@ -1,0 +1,33 @@
+{
+  "name": "integration-service",
+  "version": "1.0.0",
+  "description": "Integration tests for the users-service.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dwmkerr/node-docker-microservice.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "mocha -t 50000 ./index.js",
+    "lint": "eslint ."
+  },
+  "author": "Dave Kerr, dwmkerr@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.3.0",
+    "supertest": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "rules": {
+      "semi": 2
+    }
+  }
+}
