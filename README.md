@@ -1,4 +1,4 @@
-# node-docker-mircroservice
+# node-docker-microservice
 
 Learn Docker by building a Microservice!
 
