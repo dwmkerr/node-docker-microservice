@@ -2,7 +2,7 @@
 
 Learn Docker by building a Microservice!
 
-This is a companion project to my article on [dwmkerr.com](dwmkerr.com) demonstrating key concepts of Docker using a Node.js microservice as an example.
+This is a companion project to my article on '[Learn Docker by building a Microservice](http://www.dwmkerr.com/learn-docker-by-building-a-microservice/)' demonstrating key concepts of Docker using a Node.js microservice as an example.
 
 # Pre-requisites
 
