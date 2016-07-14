@@ -10,12 +10,14 @@
   "scripts": {
     "start": "mocha -t 50000 -w ./index.js",
     "test": "npm start",
+    "debug": "node-inspector & mocha --debug-brk -t 50000 -w ./index.js",
     "lint": "eslint ."
   },
   "author": "Dave Kerr, dwmkerr@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "mocha": "^2.4.5",
+    "mocha": "^2.5.3",
+    "node-inspector": "^0.12.8",
     "should": "^8.3.0",
     "supertest": "^1.2.0"
   },
