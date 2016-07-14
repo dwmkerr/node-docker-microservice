@@ -1,9 +1,21 @@
 version: '2'
 services:
+  integration-test:
+    build: ./integration-test
+    volumes:
+      - ./integration-test:/app
+      - /app/node_modules
+    depends_on:
+      - users-service
+    environment:
+     - USERS_SERVICE_HOST=users-service
   users-service:
     build: ./users-service
     ports:
      - "8123:8123"
+    volumes:
+      - ./users-service:/app
+      - /app/node_modules
     depends_on:
      - db
     environment:
