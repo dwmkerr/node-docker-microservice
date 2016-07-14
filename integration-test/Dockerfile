@@ -12,4 +12,4 @@ RUN npm install --production
 EXPOSE 8123
 
 # Run our app.
-CMD ["npm", "start"]
+CMD ["npm", "test"]

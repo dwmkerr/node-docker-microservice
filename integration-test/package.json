@@ -8,7 +8,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "mocha -t 50000 ./index.js",
+    "start": "mocha -t 50000 -w ./index.js",
+    "test": "npm start",
     "lint": "eslint ."
   },
   "author": "Dave Kerr, dwmkerr@gmail.com",

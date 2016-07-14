@@ -8,9 +8,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "mocha -R spec **/*.spec.js",
-    "debug": "node-debug index.js",
     "lint": "eslint ."
   },
   "author": "Dave Kerr, dwmkerr@gmail.com",
@@ -18,12 +17,13 @@
   "dependencies": {
     "express": "^4.13.4",
     "morgan": "^1.7.0",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "node-inspector": "^0.12.8",
+    "nodemon": "^1.9.2"
   },
   "devDependencies": {
     "eslint": "^2.7.0",
     "mocha": "^2.4.5",
-    "node-inspector": "^0.12.7",
     "should": "^8.3.0",
     "supertest": "^1.2.0"
   },
