@@ -29,7 +29,7 @@ describe('users-service', () => {
   
   it('returns a 200 for another known user', (done) => {
 
-    api.get('/search?email=grandpa@thesimpsons.com')
+    api.get('/search?email=maggie@thesimpsons.com')
       .expect(200, done);
 
   });

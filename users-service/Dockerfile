@@ -6,10 +6,11 @@ WORKDIR /app
 ADD . .
 
 # Install dependencies
-RUN npm install --production
+RUN npm install
 
 # Expose our server port.
 EXPOSE 8123
+EXPOSE 8080
 
 # Run our app.
 CMD ["npm", "start"]

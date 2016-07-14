@@ -13,9 +13,10 @@ services:
     build: ./users-service
     ports:
      - "8123:8123"
-    volumes:
-      - ./users-service:/app
-      - /app/node_modules
+     - "8080:8080"
+#    volumes:
+#      - ./users-service:/app
+#      - /app/node_modules
     depends_on:
      - db
     environment:
