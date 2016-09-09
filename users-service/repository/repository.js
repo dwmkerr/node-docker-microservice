@@ -9,8 +9,9 @@ var mysql = require('mysql');
 //  Class which holds an open connection to a repository
 //  and exposes some simple functions for accessing data.
 class Repository {
-  constructor(connection) {
-    this.connection = connection;
+  constructor(connectionSettings) {
+    this.connectionSettings = connectionSettings;
+    this.connection = mysql.createConnection(this.connectionSettings);
   }
 
   getUsers() {
@@ -18,6 +19,7 @@ class Repository {
 
       this.connection.query('SELECT email, phone_number FROM directory', (err, results) => {
         if(err) {
+          this.connection = mysql.createConnection(this.connectionSettings);
           return reject(new Error('An error occured getting the users: ' + err));
         }
 
@@ -70,6 +72,6 @@ module.exports.connect = (connectionSettings) => {
     if(!connectionSettings.password) throw new Error("A password must be specified.");
     if(!connectionSettings.port) throw new Error("A port must be specified.");
 
-    resolve(new Repository(mysql.createConnection(connectionSettings)));
+    resolve(new Repository(connectionSettings));
   });
 };

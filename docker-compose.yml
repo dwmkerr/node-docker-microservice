@@ -2,8 +2,11 @@ version: '2'
 services:
   users-service:
     build: ./users-service
+    container_name: users_service
     ports:
      - "8123:8123"
+    links:
+      - db:db
     depends_on:
      - db
     environment:
