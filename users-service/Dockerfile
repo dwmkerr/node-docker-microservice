@@ -1,15 +1,23 @@
 # Use Node v4 as the base image.
 FROM node:4
 
-# Add everything in the current directory to our image, in the 'app' folder.
-ADD . /app
+# Add our user and group first to make sure their IDs get assigned consistently
+RUN groupadd -r app && useradd -r -g app app 
 
-# Install dependencies
-RUN cd /app; \
-    npm install --production
+# To reduce the build time during development we ensure non-changing layers comes first
+#Creating a workdirectory
+WORKDIR /app
 
 # Expose our server port.
 EXPOSE 8123
 
-# Run our app.
-CMD ["node", "/app/index.js"]
+# Set the default command to run when a container starts
+CMD ["npm", "start"]
+
+# Install app dependencies
+COPY package.json /app
+RUN npm install --production
+
+# Using the recommended COPY command instead of ADD. COPY everything
+# in the current directory to our image, in the 'app' folder.
+COPY . /app
