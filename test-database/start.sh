@@ -7,7 +7,7 @@ docker run --name db -d \
   -e MYSQL_ROOT_PASSWORD=123 \
   -e MYSQL_DATABASE=users -e MYSQL_USER=users_service -e MYSQL_PASSWORD=123 \
   -p 3306:3306 \
-  mysql:latest
+  mysql:5
 
 # Wait for the database service to start up.
 echo "Waiting for DB to start up..."
