@@ -1,5 +1,7 @@
 # node-docker-microservice
 
+[![GuardRails badge](https://badges.production.guardrails.io/dwmkerr/node-docker-microservice.svg)](https://www.guardrails.io)
+
 Learn Docker by building a Microservice!
 
 This is a companion project to my article on '[Learn Docker by building a Microservice](http://www.dwmkerr.com/learn-docker-by-building-a-microservice/)' demonstrating key concepts of Docker using a Node.js microservice as an example.
