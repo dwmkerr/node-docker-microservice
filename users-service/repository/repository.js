@@ -19,7 +19,6 @@ class Repository {
 
       this.connection.query('SELECT email, phone_number FROM directory', (err, results) => {
         if(err) {
-          this.connection = mysql.createConnection(this.connectionSettings);
           return reject(new Error('An error occured getting the users: ' + err));
         }
 
